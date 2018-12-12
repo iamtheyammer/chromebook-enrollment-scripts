@@ -24,6 +24,7 @@
 #define skipAssetIdScreen 0 // Set to 0 if you want Centipede to stop at the asset ID and location screen
 #define languageIsSelectedOnBootPre70 1 // Set to 1 if the language box is selected when you first power on the device [BELOW CHROME VERSION 70]
 #define languageIsSelectedOnBootPost70 0 // Set to 1 if the language box is selected when you first power on the device [AFTER OR ON CHROME 70]
+#define waitForButtonOnEnrollmentScreen 0 // Set to 1 if you want the script to stop at the enrollment screen until you press the button.
 
 /* These are advanced options. The defaults should be fine, but feel free to tweak values below. */
 
@@ -99,11 +100,13 @@ void loop() {
       bootLoop();
     }
     TXLED0;
-    while (digitalRead(dtechButtonPin) == LOW) {
+    if (waitForButtonOnEnrollmentScreen == 1) {
+      while (digitalRead(dtechButtonPin) == LOW) {
       // wait for the button to be pressed for the credentials to be entered.
-      digitalWrite(LED_BUILTIN, LOW);
-      delay(125);
-      digitalWrite(LED_BUILTIN, HIGH);
+        digitalWrite(LED_BUILTIN, LOW);
+        delay(125);
+        digitalWrite(LED_BUILTIN, HIGH);
+      }
     }
     enterCredentials(); // enters google credentials
     if (skipAssetIdScreen) {
