@@ -237,17 +237,6 @@ void wifiConfig() {
   // After connecting, enter the enrollment key command to skip checking for update at this point in the process
   enterEnrollment();
   Keyboard.write(KEY_ENTER);
-  // Terms of Service screen
-
-  wait(1);
-  repeatKey(KEY_TAB, 2);
-  if (!sendUsageToGoogle) {
-    Keyboard.write(KEY_ENTER);
-    wait(1);
-  }
-  repeatKey(KEY_TAB, 3);
-  wait(1);
-  Keyboard.write(KEY_ENTER);
   wait(10);
 }
 
