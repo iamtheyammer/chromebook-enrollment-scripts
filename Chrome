@@ -12,11 +12,11 @@
 
 /* Modify the following definitions to fit your wireless and enrollment credentials. */
 
-#define wifi_name "---" // Define SSID for your wireless connection.
-#define wifi_pass "---" // Define the password for your wireless connection.
+#define wifi_name "HPS-Curric" // Define SSID for your wireless connection.
+#define wifi_pass "02085426936" // Define the password for your wireless connection.
 #define wifi_security 2 // Set to 0 for open, 1 for WEP, 2 for WPA
-#define username "---" // Define the user name for enrolling the device.
-#define password "---" // The password for the enrollment GAFE account.
+#define username "googleadmin@hillcrossprimary.org.uk" // Define the user name for enrolling the device.
+#define password "Hobnob56" // The password for the enrollment GAFE account.
 
 // Use these options to deter mine if you want to disable analytics, skip asset ID, or if you need to slow down the Centipede
 
